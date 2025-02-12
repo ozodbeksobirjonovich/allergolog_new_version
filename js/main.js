@@ -440,7 +440,7 @@ $(".featured-imagebox-post-border").hover(function() {
 
 
 $(document).ready(function() {
-    var e = '<div style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 10px;">'+
+    var e = '<div id="fixed-buttons" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 10px;">'+
                 '<a href="https://t.me/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
                     '<i class="bi bi-telegram"></i>'+
                 '</a>'+
@@ -459,4 +459,49 @@ $(document).ready(function() {
             '</div>';
 
     $('body').append(e);
+
+    // Mobil ekran uchun o‘zgarishlar
+    function adjustForMobile() {
+        if (window.innerWidth <= 768) {
+            $('#fixed-buttons').css({
+                "right": "0",
+                "left": "0",
+                "bottom": "0",
+                "top": "auto",
+                "transform": "translateY(0)",
+                "flex-direction": "row",
+                "justify-content": "space-evenly",
+                "padding": "10px 0",
+                "background-color": "rgba(255, 255, 255, 0.9)"
+            });
+
+            $('#fixed-buttons a').css({
+                "width": "60px",
+                "height": "60px",
+                "font-size": "22px"
+            });
+        } else {
+            $('#fixed-buttons').css({
+                "position": "fixed",
+                "right": "20px",
+                "top": "50%",
+                "transform": "translateY(-50%)",
+                "z-index": "9999",
+                "display": "flex",
+                "flex-direction": "column",
+                "gap": "10px",
+                "background-color": "transparent"
+            });
+
+            $('#fixed-buttons a').css({
+                "width": "50px",
+                "height": "50px",
+                "font-size": "24px"
+            });
+        }
+    }
+
+    // Dastlabki chaqirish va oyna o‘lchami o‘zgarganda qayta ishlash
+    adjustForMobile();
+    $(window).resize(adjustForMobile);
 });
