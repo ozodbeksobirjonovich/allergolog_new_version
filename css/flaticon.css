@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("../fonts/flaticon.ttf@eadcd2e806dd3b338e3c7553cf2b8ad2") format("truetype"),
+url("../fonts/flaticon.woff@eadcd2e806dd3b338e3c7553cf2b8ad2") format("woff"),
+url("../fonts/flaticon.woff2@eadcd2e806dd3b338e3c7553cf2b8ad2") format("woff2"),
+url("../fonts/flaticon.eot@eadcd2e806dd3b338e3c7553cf2b8ad2") format("embedded-opentype"),
+url("../fonts/flaticon.svg@eadcd2e806dd3b338e3c7553cf2b8ad2") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-shield:before {
+    content: "\f101";
+}
+.flaticon-heart:before {
+    content: "\f102";
+}
+.flaticon-medical-report:before {
+    content: "\f103";
+}
+.flaticon-hospital-facility:before {
+    content: "\f104";
+}
+.flaticon-ambulance:before {
+    content: "\f105";
+}
