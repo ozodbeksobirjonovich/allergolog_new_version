@@ -1898,7 +1898,18 @@ i.icon-plus-1:before {
 nav.main-menu ul {
     position: relative;
     margin: 0;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+nav.main-menu ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #site-header-menu .site-navigation ul.menu > li >a {
     font-size: 16px;
     text-decoration: none;
