@@ -444,16 +444,16 @@ $(document).ready(function() {
                 '<a href="https://t.me/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
                     '<i class="bi bi-telegram"></i>'+
                 '</a>'+
-                '<a href="https://www.youtube.com/@Allergolog_Muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #dc3545; color: #fff; text-decoration: none;">'+
+                '<a href="https://www.youtube.com/@Allergolog_Muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
                     '<i class="bi bi-youtube"></i>'+
                 '</a>'+
-                '<a href="https://www.instagram.com/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #ffc107; color: #fff; text-decoration: none;">'+
+                '<a href="https://www.instagram.com/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
                     '<i class="bi bi-instagram"></i>'+
                 '</a>'+
-                '<a href="tel:+998901317775" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #28a745; color: #fff; text-decoration: none;">'+
+                '<a href="tel:+998901317775" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
                     '<i class="bi bi-telephone"></i>'+
                 '</a>'+
-                '<a href="https://yandex.uz/maps/-/CDXGV04G" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #17a2b8; color: #fff; text-decoration: none;">'+
+                '<a href="https://yandex.uz/maps/-/CDXGV04G" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
                     '<i class="bi bi-geo-alt"></i>'+
                 '</a>'+
             '</div>';
@@ -472,13 +472,13 @@ $(document).ready(function() {
                 "flex-direction": "row",
                 "justify-content": "space-evenly",
                 "padding": "10px 0",
-                "background-color": "rgba(255, 255, 255, 0.9)"
+                "background-color": "rgba(255, 255, 255, 1)"
             });
 
             $('#fixed-buttons a').css({
                 "width": "60px",
                 "height": "60px",
-                "font-size": "22px"
+                "font-size": "30px"
             });
         } else {
             $('#fixed-buttons').css({
