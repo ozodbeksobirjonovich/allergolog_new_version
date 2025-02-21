@@ -15,30 +15,30 @@ if (jQuery(function(e) {
         }), e(window).on("scroll", function() {
             matchMedia("only screen and (min-width: 1200px)").matches && (e(window).scrollTop() >= 50 ? e(".prt-stickable-header").addClass("fixed-header") : e(".prt-stickable-header").removeClass("fixed-header"))
         });
-        var t = {
-            initialize: function() {
-                this.Menuhover()
-            },
-            Menuhover: function() {
-                var t = e("nav.main-menu");
-                e(window).width(), e(window).height(), t.find("ul.menu").data("in"), t.find("ul.menu").data("out"), matchMedia("only screen and (max-width: 1200px)").matches && e("nav.main-menu ul.menu").each(function() {
-                    e("a.mega-menu-link", this).on("click", function(t) {
-                        t.preventDefault(), e(this).toggleClass("active").next("ul").toggleClass("active")
-                    }), e(".megamenu-fw", this).each(function() {
-                        e(".col-menu", this).each(function() {
-                            e(".title", this).off("click"), e(".title", this).on("click", function() {
-                                return e(this).closest(".col-menu").find(".content").stop().toggleClass("active"), e(this).closest(".col-menu").toggleClass("active"), !1
-                            })
-                        })
-                    })
-                })
-            }
-        };
-        e(".btn-show-menu-mobile").on("click", function(t) {
-            return e(this).toggleClass("is-active"), e(".menu-mobile").toggleClass("show"), !1
-        }), e(document).ready(function() {
-            t.initialize()
-        });
+        // var t = {
+        //     initialize: function() {
+        //         this.Menuhover()
+        //     },
+        //     Menuhover: function() {
+        //         var t = e("nav.main-menu");
+        //         e(window).width(), e(window).height(), t.find("ul.menu").data("in"), t.find("ul.menu").data("out"), matchMedia("only screen and (max-width: 1200px)").matches && e("nav.main-menu ul.menu").each(function() {
+        //             e("a.mega-menu-link", this).on("click", function(t) {
+        //                 t.preventDefault(), e(this).toggleClass("active").next("ul").toggleClass("active")
+        //             }), e(".megamenu-fw", this).each(function() {
+        //                 e(".col-menu", this).each(function() {
+        //                     e(".title", this).off("click"), e(".title", this).on("click", function() {
+        //                         return e(this).closest(".col-menu").find(".content").stop().toggleClass("active"), e(this).closest(".col-menu").toggleClass("active"), !1
+        //                     })
+        //                 })
+        //             })
+        //         })
+        //     }
+        // };
+        // e(".btn-show-menu-mobile").on("click", function(t) {
+        //     return e(this).toggleClass("is-active"), e(".menu-mobile").toggleClass("show"), !1
+        // }), e(document).ready(function() {
+        //     t.initialize()
+        // });
         var o = jQuery(".banner_slider"),
             s = e("div.slide:first-child");
 
