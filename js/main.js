@@ -437,29 +437,64 @@ $(".featured-imagebox-post-border").hover(function() {
         e.refresh()
     }))
 });
-
-
 $(document).ready(function() {
-    var e = '<div id="fixed-buttons" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 10px;">'+
-                '<a href="https://t.me/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
-                    '<i class="bi bi-telegram"></i>'+
-                '</a>'+
-                '<a href="https://www.youtube.com/@Allergolog_Muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
-                    '<i class="bi bi-youtube"></i>'+
-                '</a>'+
-                '<a href="https://www.instagram.com/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
-                    '<i class="bi bi-instagram"></i>'+
-                '</a>'+
-                '<a href="tel:+998901317775" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
-                    '<i class="bi bi-telephone"></i>'+
-                '</a>'+
-                '<a href="https://yandex.uz/maps/-/CDXGV04G" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">'+
-                    '<i class="bi bi-geo-alt"></i>'+
-                '</a>'+
+    // Fixed tugmalar uchun HTML (avvalgi tugmalarga qo'shimcha "Ariza qoldirish" tugmasi)
+    var fixedButtonsHTML = '<div id="fixed-buttons" style="position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; gap: 10px;">' +
+                '<a href="https://t.me/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                    '<i class="bi bi-telegram"></i>' +
+                '</a>' +
+                '<a href="https://www.youtube.com/@Allergolog_Muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                    '<i class="bi bi-youtube"></i>' +
+                '</a>' +
+                '<a href="https://www.instagram.com/allergolog_muxtorov" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                    '<i class="bi bi-instagram"></i>' +
+                '</a>' +
+                '<a href="tel:+998901317775" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                    '<i class="bi bi-telephone"></i>' +
+                '</a>' +
+                '<a href="https://yandex.uz/maps/-/CDXGV04G" target="_blank" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                    '<i class="bi bi-geo-alt"></i>' +
+                '</a>' +
+                // Yangi "Ariza qoldirish" tugmasi
+                '<a href="javascript:void(0)" id="openModal" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                    '<i class="bi bi-pencil-square"></i>' +
+                '</a>' +
             '</div>';
-
-    $('body').append(e);
-
+    
+    $('body').append(fixedButtonsHTML);
+    
+    // Modal oynani yaratish (ariza shakli)
+    var modalHTML = '<div id="modalFormContainer" style="display:none; position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 10000;">' +
+      '<div style="position: relative; margin: 5% auto; padding: 20px; background: #fff; width: 90%; max-width: 400px; border-radius: 8px;">' +
+        '<span id="closeModal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px;">&times;</span>' +
+        '<h2 style="text-align: center; margin-bottom: 20px;">Ariza qoldirish</h2>' +
+        '<form action="https://formspree.io/f/mnnjydrr" method="POST" id="modalForm">' +
+          '<label style="display: block; margin-bottom: 10px;">To\'liq ismingiz:<br><input type="text" name="name" required style="width: 100%; padding: 8px; margin-top: 5px;"></label>' +
+          '<label style="display: block; margin-bottom: 10px;">Telefon raqamingiz:<br><input type="tel" name="phone" required style="width: 100%; padding: 8px; margin-top: 5px;"></label>' +
+          '<label style="display: block; margin-bottom: 10px;">Xabar:<br><textarea name="message" required style="width: 100%; padding: 8px; margin-top: 5px;"></textarea></label>' +
+          '<button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: #fff; border: none; border-radius: 4px;">Yuborish</button>' +
+        '</form>' +
+      '</div>' +
+    '</div>';
+    
+    $('body').append(modalHTML);
+    
+    // Modal oynani ochish va yopish funksiyalari
+    $('#openModal').click(function() {
+        $('#modalFormContainer').fadeIn();
+    });
+    
+    $('#closeModal').click(function() {
+        $('#modalFormContainer').fadeOut();
+    });
+    
+    // Agar foydalanuvchi modal tashqarisiga bosadigan bo'lsa, modalni yopish
+    $(window).click(function(event) {
+        if ($(event.target).is('#modalFormContainer')) {
+            $('#modalFormContainer').fadeOut();
+        }
+    });
+    
     // Mobil ekran uchun o‘zgarishlar
     function adjustForMobile() {
         if (window.innerWidth <= 768) {
@@ -474,7 +509,7 @@ $(document).ready(function() {
                 "padding": "10px 0",
                 "background-color": "rgba(255, 255, 255, 1)"
             });
-
+    
             $('#fixed-buttons a').css({
                 "width": "60px",
                 "height": "60px",
@@ -492,7 +527,7 @@ $(document).ready(function() {
                 "gap": "10px",
                 "background-color": "transparent"
             });
-
+    
             $('#fixed-buttons a').css({
                 "width": "50px",
                 "height": "50px",
@@ -500,7 +535,7 @@ $(document).ready(function() {
             });
         }
     }
-
+    
     // Dastlabki chaqirish va oyna o‘lchami o‘zgarganda qayta ishlash
     adjustForMobile();
     $(window).resize(adjustForMobile);
