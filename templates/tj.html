@@ -115,7 +115,7 @@
                                         <p>Агар шумо мушкилоти аллергия ё иммунитет, ё бемориҳои музмини бронхит, астма ва
                                             монанди инҳоро доред, ҳамин ҳоло муроҷиат кунед. <br> Дар сурати бо мо дар
                                             тамос шудан, шумо метавонед аз мутахассисони мо машварати бепул гиред!</p>
-                                        <a href="javascript:void(0)" id="openModal"
+                                        <a href="/ariza"
                                             class="prt-btn btn-inline prt-btn-size-md prt-btn-color-skincolor underline">Дархост
                                             гузоштан!</a>
                                     </div>
@@ -1257,108 +1257,12 @@
                 '<i class="bi bi-geo-alt"></i>' +
                 '</a>' +
                 // Тугмаи барои дархост гузоштан
-                '<a href="javascript:void(0)" id="openModal" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
+                '<a href="/ariza" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px; font-size: 24px; border-radius: 50%; transition: all 0.3s ease-in-out; background-color: #007bff; color: #fff; text-decoration: none;">' +
                 '<i class="bi bi-pencil-square"></i>' +
                 '</a>' +
                 '</div>';
 
             $('body').append(fixedButtonsHTML);
-
-            // Модал (оинаи пайдошаванда) барои дархост
-            var modalHTML = '<div id="modalFormContainer" style="display:none; position: fixed; top: 0; left: 0; width:100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; overflow-y: auto;">' +
-                '<div style="position: relative; margin: 5% auto; padding: 0; background: linear-gradient(to bottom, #8b3cb6, #5a2e8a); width: 90%; max-width: 400px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); color: white;">' +
-                '<div style="padding: 20px; position: relative;">' +
-                '<span id="closeModal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px; color: white;">&times;</span>' +
-
-                '<div style="margin: 25px 0 15px; text-align: center;">' +
-                '<h3 style="margin-bottom: 10px; font-size: 16px;">Шикоятҳои аллергологӣ ё иммунологӣ доред? <span style="font-size: 20px;">🤔</span><span style="font-size: 20px;">🥲</span></h3>' +
-                '<p style="margin-bottom: 20px; font-size: 16px;">Ҳозиронтар паём гузоред! <span style="font-size: 20px;">😊</span></p>' +
-                '</div>' +
-
-                '<form action="https://formspree.io/f/xoveajjz" method="POST" id="modalForm">' +
-                '<div style="margin-bottom: 15px;">' +
-                '<label style="display: block; margin-bottom: 8px; font-size: 14px;">Ном <span style="color: red;">*</span></label>' +
-                '<input type="text" name="name" required style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: rgba(255, 255, 255, 0.15); color: white; font-size: 16px;">' +
-                '</div>' +
-
-                '<div style="margin-bottom: 15px;">' +
-                '<label style="display: block; margin-bottom: 8px; font-size: 14px;">Рақами Telegram-и Шумо <span style="color: red;">*</span></label>' +
-                '<input type="text" name="telegram" required style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: rgba(255, 255, 255, 0.15); color: white; font-size: 16px;">' +
-                '</div>' +
-
-                '<div style="margin-bottom: 15px;">' +
-                '<label style="display: block; margin-bottom: 8px; font-size: 14px;">Шикоятҳои Шумо <span style="color: red;">*</span></label>' +
-                '<textarea name="complaints" required style="width: 100%; padding: 12px; border-radius: 8px; border: none; background-color: rgba(255, 255, 255, 0.15); color: white; font-size: 16px; min-height: 100px;"></textarea>' +
-                '</div>' +
-
-                '<div style="margin-bottom: 20px;">' +
-                '<label style="display: block; margin-bottom: 10px; font-size: 14px;">Оё пештар ташриф оварда будед? <span style="color: red;">*</span></label>' +
-                '<div style="display: flex; align-items: center; background-color: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 8px;">' +
-                '<div style="width: 50%; display: flex; align-items: center;">' +
-                '<input type="radio" id="visited_yes" name="visited" value="ha" style="margin-right: 10px; transform: scale(1.5);">' +
-                '<label for="visited_yes" style="font-size: 16px;">Ҳа</label>' +
-                '</div>' +
-                '<div style="width: 50%; display: flex; align-items: center;">' +
-                '<input type="radio" id="visited_no" name="visited" value="yoq" style="margin-right: 10px; transform: scale(1.5);">' +
-                '<label for="visited_no" style="font-size: 16px;">Не</label>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-
-                '<button type="submit" style="width: 100%; padding: 15px; background-color: #9c27b0; color: #fff; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; margin-bottom: 15px;">Ирсол</button>' +
-                '</form>' +
-
-                '<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">' +
-                '<a href="https://yandex.uz/maps/-/CHubuNke" style="display: flex; justify-content: center; align-items: center; padding: 12px; background-color: #5a2e8a; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">' +
-                '<i class="bi bi-geo-alt" style="margin-right: 10px;"></i> Манзил' +
-                '</a>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
-
-            $('body').append(modalHTML);
-
-            // Кушодан ва бастани модал
-            $('#openModal').click(function () {
-                $('#modalFormContainer').fadeIn();
-            });
-
-            $('#closeModal').click(function () {
-                $('#modalFormContainer').fadeOut();
-            });
-
-            // Бастани модал ҳангоми зер кардан берун аз он
-            $(window).click(function (event) {
-                if ($(event.target).is('#modalFormContainer')) {
-                    $('#modalFormContainer').fadeOut();
-                }
-            });
-
-            // Санҷиши шакли модал
-            $('#modalForm').submit(function (e) {
-                var isValid = true;
-                var requiredFields = $(this).find('[required]');
-
-                requiredFields.each(function () {
-                    if (!$(this).val()) {
-                        isValid = false;
-                        $(this).css('border', '1px solid red');
-                    } else {
-                        $(this).css('border', 'none');
-                    }
-                });
-
-                if (!$('input[name="visited"]:checked').length) {
-                    isValid = false;
-                    $('input[name="visited"]').closest('div.display-flex').css('border', '1px solid red');
-                }
-
-                if (!isValid) {
-                    e.preventDefault();
-                    alert('Лутфан ҳамаи майдонҳои ҳатмиро пур кунед');
-                }
-            });
 
             // Танзим барои мобил
             function adjustForMobile() {
